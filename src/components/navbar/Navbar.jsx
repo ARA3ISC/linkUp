@@ -18,10 +18,10 @@ function Navbar() {
 		<>
 			<nav className='sticky top-0 z-[20] mx-auto '>
 				<div className=' flex justify-between items-center bg-primary  px-8 py-4'>
-					<div className='text-2xl text-white'>LinkUp</div>
+					<Link to="/" className='text-2xl text-white'>LinkUp</Link>
 					<div className='hidden text-white md:flex items-start'>
-						<NavLink to="/login" className='mx-7'>Login</NavLink>
-						<NavLink to="/register" className='mx-7'>Register</NavLink>
+						<NavLink to="/login" className='mx-7 menu__link'>Login</NavLink>
+						<NavLink to="/register" className='mx-7 menu__link'>Register</NavLink>
 					</div>
 
 					<button className='md:hidden' onClick={toggleMenu}>
@@ -32,7 +32,7 @@ function Navbar() {
 
 
 				</div>
-				{isMenuToggeled ? <MobileMenu top="top-20 " toggle={toggleMenu} /> : <MobileMenu top="top-[-800px]" toggle={toggleMenu} />}
+				{isMenuToggeled ? <MobileMenu top="top-16 " toggle={toggleMenu} /> : <MobileMenu top="top-[-900px]" toggle={toggleMenu} />}
 
 
 			</nav>
