@@ -1,0 +1,22 @@
+#root {
+  margin: 0;
+  padding: 0;
+
+  --primary-color: #F25019; /* Primary color */
+  --secondary-color: #FEDDC6; /* Secondary color */
+  --accent-color: #657786; /* Accent color */
+}
+
+body {
+  background-color: #FEDCC5;
+
+}
+
+* {
+  font-family: 'Kanit';
+  color: #333333;
+}
+
+.active {
+  color:darkgrey;
+}
