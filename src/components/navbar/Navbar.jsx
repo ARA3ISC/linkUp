@@ -32,7 +32,7 @@ function Navbar() {
 
 
 				</div>
-				{isMenuToggeled ? <MobileMenu top="top-16 " toggle={toggleMenu} /> : <MobileMenu top="top-[-900px]" toggle={toggleMenu} />}
+				{isMenuToggeled ? <MobileMenu top="top-16 " toggle={toggleMenu} /> : <MobileMenu top="top-[-1200px]" toggle={toggleMenu} />}
 
 
 			</nav>

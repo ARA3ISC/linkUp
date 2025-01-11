@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function LoginCard() {
 	return (
-		<div className='pt-12 px-14 pb-7 w-[28.438rem] shadow-lg backdrop-blur-lg'>
+		<div className='pt-12 px-14 pb-7 shadow-lg backdrop-blur-lg'>
 			<h1 className='text-5xl'>Login</h1>
 			<LoginForm />
 			<div className='text-center font-light mt-6 mb-8'>Or Continue With</div>
