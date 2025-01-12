@@ -69,6 +69,10 @@ function RegisterForm() {
 						<label htmlFor="email" className='my-2 text-sm '>Email</label>
 						<input type="email" className='pl-4 py-3 w-full rounded-md text-sm ' name='email' placeholder='username@gmail.com' required />
 					</div>
+					<div className='flex flex-col '>
+						<label htmlFor="username" className='my-2 text-sm '>Username</label>
+						<input type="username" className='pl-4 py-3 w-full rounded-md text-sm ' name='username' placeholder='username' required />
+					</div>
 					<div className='flex flex-col mt-2'>
 						<label htmlFor="password" className='my-2 text-sm '>Password</label>
 						<input type="password" className='pl-4 py-3 w-full rounded-md text-sm ' name='password' placeholder='Password' required />

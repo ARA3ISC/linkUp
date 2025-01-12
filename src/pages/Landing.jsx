@@ -4,9 +4,9 @@ import Button from "../components/buttons/Button";
 function Landing() {
   return (
     <>
-      <section className="h-screen px-4 py-2 text-center md:flex md:justify-center ">
-        <div className="md:w-1/2">
-          <h1 className="pt-14 pb-8 landing-h1">
+      <section className="container mx-auto h-screen px-4 py-2 text-center md:flex md:justify-around md:items-center">
+        <div className="md:w-1/2 md:text-start">
+          <h1 className="pt-14 pb-8 text-5xl font-abril  md:leading-normal ">
             Seamless Conversations, Real-Time Messaging, Anytime You Want
           </h1>
           <p className="text-[#505050] font-light text-lg">
@@ -14,7 +14,7 @@ function Landing() {
             ensures smooth, fast, and reliable communication, so you're never
             out of touch
           </p>
-          <div className="flex justify-center py-6">
+          <div className="flex justify-center md:justify-start py-6">
             <Button value="Let's Chat!" />
           </div>
         </div>

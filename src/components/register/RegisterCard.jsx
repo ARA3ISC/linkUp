@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function RegisterCard() {
 	return (
-		<div className='pt-12 px-14 pb-7 shadow-lg backdrop-blur-lg'>
+		<div className='pt-12 px-14 pb-7 shadow-lg backdrop-blur-lg min-w-[350px] max-w-[450px] w-full'>
 			<h1 className='text-5xl'>Register</h1>
 			<RegisterForm />
 			<div className='text-center font-light mt-6 mb-8'>Or Continue With</div>

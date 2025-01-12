@@ -16,24 +16,27 @@ function Navbar() {
 
 	return (
 		<>
-			<nav className='sticky top-0 z-[20] mx-auto '>
-				<div className=' flex justify-between items-center bg-primary  px-8 py-4'>
-					<Link to="/" className='text-2xl text-white'>LinkUp</Link>
-					<div className='hidden text-white md:flex items-start'>
-						<NavLink to="/login" className='mx-7 menu__link'>Login</NavLink>
-						<NavLink to="/register" className='mx-7 menu__link'>Register</NavLink>
-					</div>
+			<nav className='bg-primary sticky top-0 z-[20]'>
+				<div className="container mx-auto ">
+					<div className=' flex justify-between items-center  px-8 py-4'>
+						<Link to="/" className='text-2xl text-white'>LinkUp</Link>
+						<div className='hidden text-white md:flex md:items-center'>
+							<NavLink to="/login" className='mx-7 menu__link'>Login</NavLink>
+							<NavLink to="/register" className='mx-7 p-2 bg-white text-primary rounded-lg '>Get Started Now</NavLink>
+						</div>
 
-					<button className='md:hidden' onClick={toggleMenu}>
-						{
-							!isMenuToggeled ? <i className="fa-solid fa-bars fa-xl text-white" ></i> : <i className="fa-solid fa-xmark fa-2xl text-white"></i>
-						}
-					</button>
+						<button className='md:hidden' onClick={toggleMenu}>
+							{
+								!isMenuToggeled ? <i className="fa-solid fa-bars fa-xl text-white" ></i> : <i className="fa-solid fa-xmark fa-2xl text-white"></i>
+							}
+						</button>
+
+
+					</div>
+					{isMenuToggeled ? <MobileMenu top="top-0 " toggle={toggleMenu} /> : <MobileMenu top="top-[-1200px]" toggle={toggleMenu} />}
 
 
 				</div>
-				{isMenuToggeled ? <MobileMenu top="top-16 " toggle={toggleMenu} /> : <MobileMenu top="top-[-1200px]" toggle={toggleMenu} />}
-
 
 			</nav>
 		</>

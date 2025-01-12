@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        abril: ['Abril Fatface', 'sans-serif']
+      },
       colors: {
         primary: 'var(--primary-color)', // CSS Variable for primary color
         secondary: 'var(--secondary-color)', // CSS Variable for secondary color
