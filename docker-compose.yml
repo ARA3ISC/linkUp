@@ -1,0 +1,100 @@
+services:
+
+  user_database:
+    image: postgres:latest
+    container_name: user_database
+    volumes:
+      - ./user_database/:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: user_db
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: user_db
+      DB_USER: user_db
+      DB_PWD: 1111
+      DB_HOST: user_database
+      DB_PORT: 5432
+    healthcheck:
+      test: [ "CMD", "psql", "-h", "localhost", "-U", "postgres", "-p", "5432" ]
+      interval: 10s
+      timeout: 15s
+      retries: 1000000
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+    restart: always
+
+  token_database:
+    image: postgres:latest
+    container_name: token_database
+    volumes:
+      - ./token_database/:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: token_db
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: token_db
+      DB_USER: token_db
+      DB_PWD: 1111
+      DB_HOST: token_database
+      DB_PORT: 5433
+    healthcheck:
+      test: [ "CMD", "psql", "-h", "localhost", "-U", "postgres", "-p", "5433" ]
+      interval: 10s
+      timeout: 15s
+      retries: 1000000
+    ports:
+      - "5433:5433"
+    networks:
+      - mynetwork
+    restart: always
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    restart: always
+    depends_on:
+      - user_database
+      - token_database
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+
+  user_service:
+    build: ./backend/user/
+    image: auth
+    container_name: auth
+    # ports:
+    #   - "8000"
+    volumes:
+      - ./backend/user:/user/
+    depends_on:
+      user_database:
+        condition: service_healthy
+    # env_file:
+    #   - .env
+    networks:
+      - mynetwork
+    restart: always
+  
+  token_service:
+    build: ./backend/Token/
+    image: token
+    container_name: token
+    # ports:
+    #   - "8000"
+    volumes:
+      - ./backend/Token:/Token/
+    depends_on:
+      token_database:
+        condition: service_healthy
+    # env_file:
+    #   - .env
+    networks:
+      - mynetwork
+    restart: always
+
+
+networks:
+  mynetwork:
+    driver: bridge
