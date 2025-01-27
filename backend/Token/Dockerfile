@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8001
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8001", "Token.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8001", "--reload","Token.wsgi:application"]
