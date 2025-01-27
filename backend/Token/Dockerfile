@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-WORKDIR /app
+WORKDIR /Token
 
 
 RUN apt-get update && apt-get install -y \
@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8001
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8001", "user.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8001", "Token.wsgi:application"]
